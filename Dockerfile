@@ -1,4 +1,4 @@
-FORM sequenceiq/ambari:2.1.2-v1
+FROM sequenceiq/ambari:2.1.2-v1
 MAINTAINER Zqin
 
 ENV EAGLE_DOWNLOAD_LINK http://10.65.246.34:8081/view/Eagle-Security/job/Eagle-SCM/ws/eagle-assembly/target/eagle-0.1.0-bin.tar.gz
@@ -6,6 +6,8 @@ ENV EAGLE_DOWNLOAD_LINK http://10.65.246.34:8081/view/Eagle-Security/job/Eagle-S
 RUN curl -sL $EAGLE_DOWNLOAD_LINK | tar -xz -C /usr/local/
 RUN cd /usr/local && ln -s ./eagle-0.1.0-bin eagle
 ENV EAGLE_HOME=/usr/local/eagle
+
+ADD HDP.repo /etc/yum.repos.d/
 
 RUN yum install -y kafka zookeeper storm hbase tez hadoop snappy snappy-devel hadoop-libhdfs ambari-log4j hive hive-hcatalog hive-webhcat webhcat-tar-hive webhcat-tar-pig mysql-connector-java mysql-server
 
