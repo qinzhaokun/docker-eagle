@@ -1,0 +1,9 @@
+{
+  "event_handlers": [
+    "member-join=/usr/local/serf/handlers/ambari-bootstrap",
+    "user:eagle=/usr/local/serf/handlers/ealge"
+  ],
+  "tags" : {
+    "ambari-agent": "true"
+  }
+}
