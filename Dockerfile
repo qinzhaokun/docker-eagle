@@ -15,6 +15,6 @@ ADD install-cluster.sh /tmp/
 ADD eagle-singlenode.json /tmp/
 ADD eagle-multinode.json /tmp/
 ADD wait-for-eagle.sh /tmp/
-ADD deploy.sh /usr/local/eagle/deploy.sh
+ADD deploy-eagle.sh /usr/local/eagle/deploy.sh
 
 EXPOSE 9099
