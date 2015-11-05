@@ -6,11 +6,11 @@ curl -Lo .amb j.mp/docker-eagle && . .amb
 full documentation: https://github.com/qinzhaokun/docker-eagle
 USAGE
 
-: ${NODE_PREFIX=amb}
+: ${NODE_PREFIX=eagle}
 : ${AMBARI_SERVER_NAME:=${NODE_PREFIX}-server}
 : ${IMAGE:="ebay/eagle:latest"}
 : ${DOCKER_OPTS:=""}
-: ${MYDOMAIN:=mycorp.kom}
+: ${MYDOMAIN:=ebay.com}
 : ${CONSUL:="${NODE_PREFIX}-consul"}
 : ${CONSUL_IMAGE:="sequenceiq/consul:v0.5.0-v6"}
 : ${CLUSTER_SIZE:=3}
@@ -110,7 +110,7 @@ eagle-deploy-cluster() {
   if [ $# -gt 1 ]; then
     BLUEPRINT=$2
   else
-    [ $act_cluster_size -gt 1 ] && BLUEPRINT=eagle-multinode || BLUEPRINT=eagle-singlenode
+    [ $act_cluster_size -gt 1 ] && BLUEPRINT=hdp-multinode-eagle || BLUEPRINT=hdp-singlenode-eagle
   fi
 
   : ${BLUEPRINT:?" required (single-node-hdfs-yarn / multi-node-hdfs-yarn / hdp-singlenode-default / hdp-multinode-default)"}
@@ -170,7 +170,7 @@ amb-start-node() {
     MORE_OPTIONS="$@"
   fi
 
-  run-command docker run $MORE_OPTIONS -e BRIDGE_IP=$(get-consul-ip) $DOCKER_OPTS --name ${NODE_PREFIX}$NUMBER -h ${NODE_PREFIX}${NUMBER}.service.consul $IMAGE /start-agent
+  run-command docker run $MORE_OPTIONS -e BRIDGE_IP=$(get-consul-ip) $DOCKER_OPTS --name ${NODE_PREFIX}$NUMBER -h ${NODE_PREFIX}${NUMBER}.$MYDOMAIN $IMAGE /start-agent
 
   _consul-register-service ${NODE_PREFIX}${NUMBER} $(get-host-ip ${NODE_PREFIX}$NUMBER)
 }
