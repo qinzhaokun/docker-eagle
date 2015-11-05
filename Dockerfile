@@ -4,7 +4,7 @@ MAINTAINER Zqin
 ENV EAGLE_DOWNLOAD_LINK http://10.65.246.34:8081/view/Eagle-Security/job/Eagle-SCM/ws/eagle-assembly/target/eagle-0.1.0-bin.tar.gz
 
 RUN curl -sL $EAGLE_DOWNLOAD_LINK | tar -xz -C /usr/local/
-RUN cd /usr/local && ln -s ./eagle-0.1.0-bin eagle
+RUN cd /usr/local && ln -s ./eagle-0.1.0 eagle
 ENV EAGLE_HOME=/usr/local/eagle
 
 ADD HDP.repo /etc/yum.repos.d/
