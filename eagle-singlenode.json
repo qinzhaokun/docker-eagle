@@ -81,7 +81,20 @@
           "name": "MYSQL_SERVER"
         },
         { "name": "GANGLIA_SERVER"},
-	{ "name": "GANGLIA_MONITOR"}
+
+	{ "name": "GANGLIA_MONITOR"},
+	
+	{ "name": "KAFKA_BROKER"},
+        {
+          "name" : "DRPC_SERVER"
+        },
+        {
+          "name" : "NIMBUS"
+        },
+        {
+          "name" : "STORM_UI_SERVER"
+        },
+        { "name" : "SUPERVISOR"}
       ],
 
       "cardinality": "1"
