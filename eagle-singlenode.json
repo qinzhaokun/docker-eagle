@@ -79,8 +79,11 @@
         },
         {
           "name": "MYSQL_SERVER"
-        }
+        },
+        { "name": "GANGLIA_SERVER"},
+	{ "name": "GANGLIA_MONITOR"}
       ],
+
       "cardinality": "1"
     }
   ],

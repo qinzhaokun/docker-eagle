@@ -7,6 +7,11 @@
       "hive-site": {
         "javax.jdo.option.ConnectionUserName": "hive",
         "javax.jdo.option.ConnectionPassword": "hive"
+      },
+      "storm-site":{
+	"worker.childopts": "localhost",
+	"supervisor.childopts": "localhost",
+	"nimbus.childopts": "localhost"
       }
     }
   ],
@@ -79,6 +84,15 @@
         },
         {
           "name": "MYSQL_SERVER"
+        },
+	{
+	  "name" : "DRPC_SERVER"
+	},
+	{
+	  "name" : "STORM_UI_SERVER"
+	},
+	{
+          "name" : "NIMBUS"
         }
       ],
       "cardinality": "1"
@@ -109,6 +123,9 @@
         },
         {
           "name": "MAPREDUCE2_CLIENT"
+        },
+        {
+          "name" : "SUPERVISOR"
         }
       ],
       "cardinality": "1"

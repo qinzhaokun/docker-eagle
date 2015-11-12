@@ -3,6 +3,7 @@
 
 export PATH=/usr/jdk64/jdk1.7.0_67/bin:$PATH
 
+
 ./ambari-shell.sh << EOF
 blueprint add --file /tmp/eagle-singlenode.json
 blueprint add --file /tmp/eagle-multinode.json
