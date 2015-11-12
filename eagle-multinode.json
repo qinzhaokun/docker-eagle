@@ -7,11 +7,6 @@
       "hive-site": {
         "javax.jdo.option.ConnectionUserName": "hive",
         "javax.jdo.option.ConnectionPassword": "hive"
-      },
-      "storm-site":{
-	"worker.childopts": "localhost",
-	"supervisor.childopts": "localhost",
-	"nimbus.childopts": "localhost"
       }
     }
   ],
@@ -85,6 +80,9 @@
         {
           "name": "MYSQL_SERVER"
         },
+	{ 
+	  "name": "GANGLIA_SERVER"
+	},
 	{
 	  "name" : "DRPC_SERVER"
 	},
@@ -124,6 +122,12 @@
         {
           "name": "MAPREDUCE2_CLIENT"
         },
+	{
+	  "name" : "KAFKA_BROKER"
+	},
+	{ 
+	  "name": "GANGLIA_MONITOR"
+	},
         {
           "name" : "SUPERVISOR"
         }

@@ -1,5 +1,5 @@
 : ${NODE_PREFIX=eagle}
-: ${AMBARI_SERVER_NAME:=${NODE_PREFIX}4}
+: ${AMBARI_SERVER_NAME:=${NODE_PREFIX}-server}
 : ${MYDOMAIN:=ebay.com}
 : ${IMAGE:="ebay/eagle3:latest"}
 : ${DOCKER_OPTS:="--dns 127.0.0.1 --entrypoint /usr/local/serf/bin/start-serf-agent.sh -e KEYCHAIN=$KEYCHAIN"}
