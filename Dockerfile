@@ -2,7 +2,7 @@ FROM sequenceiq/ambari:1.7.0
 
 MAINTAINER Zqin
 
-ENV EAGLE_DOWNLOAD_LINK http://10.65.246.34:8081/view/Eagle-Security/job/Eagle-SCM/ws/eagle-assembly/target/eagle-0.1.0-bin.tar.gz
+ENV EAGLE_DOWNLOAD_LINK http://66.211.190.194/eagle-0.1.0.tar.gz
 
 RUN curl -sL $EAGLE_DOWNLOAD_LINK | tar -xz -C /usr/local/
 RUN cd /usr/local && ln -s ./eagle-0.1.0 eagle
